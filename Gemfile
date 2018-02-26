@@ -62,3 +62,7 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem 'factory_girl_rails', '~> 4.9'
 
 gem 'gritter', '~> 1.2'
+
+gem 'administrate', '~> 0.9.0'
+
+gem 'bourbon', '~> 5.0'
