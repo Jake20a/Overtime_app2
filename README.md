@@ -22,6 +22,7 @@
 
 ##Refactor Tool
 - Refactor user association integration test in post_spec
+- Refactor post/form 
 
 
 
