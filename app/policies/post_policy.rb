@@ -1,20 +1,20 @@
 class PostPolicy < ApplicationPolicy
+  def update?
+  	return true if post_approved? && admin?
+  	return true if user_or_admin && !post_approved?
+  end
 
-	def update?
-		record.user_id == user.user_id || admin_types.include?(user.type)
-	end
-	
-	def edit
-		authorize @post
-	end	
+  private
 
-	def upate
-		authorize @post
+  	def user_or_admin
+  		record.user_id == user.id || admin?
+  	end
 
-		if  @post.upate(post_params)
-			redirect_to @post, notices: 'Your post was edited sucessfully'
-		else
-		  render :edit
-		end  	
-	end	
-end	
+  	def admin?
+  		admin_types.include?(user.type)
+  	end
+
+    def post_approved?
+    	record.approved?
+    end
+end

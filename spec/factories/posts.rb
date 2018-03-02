@@ -1,17 +1,17 @@
 # spec/factories/posts.rb
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :post do
     date Date.today
     rationale "Some Rationale"
-    status
+    # status
     user
   end
 
   factory :second_post, class: "Post" do
     date Date.yesterday
     rationale "Some more content"
-    status
+    # status
     user
   end
 end
