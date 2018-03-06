@@ -1,8 +1,9 @@
+
 FactoryBot.define do
   factory :audit_log do
     user nil
-    status 1
-    start_date "2018-03-06"
-    end_date "2018-03-06"
+    status 0
+    start_date (Date.today - 6.days)
+    end_date nil
   end
 end
