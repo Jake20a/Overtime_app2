@@ -1,6 +1,7 @@
-# app/controllers/static_controller.rb
 
 class StaticController < ApplicationController
-  def homepage
-  end
+	def homepage
+		@pending_approvals = Post.where(status: 'submitted')
+		@recent_audit_items = AuditLog.last(10)
+	end
 end
