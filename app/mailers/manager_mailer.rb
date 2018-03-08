@@ -1,8 +1,6 @@
-# app/mailers/manager_mailer.rb
-
 class ManagerMailer < ApplicationMailer
-  def email manager
-    @manager = manager
-    mail(to: @manager.email, subject: 'Daily Overtime Request Email')
-  end
+	def email manager
+		@manager = manager
+		mail(to: @manager.email, subject: 'Daily Overtime Request Email')
+	end
 end
